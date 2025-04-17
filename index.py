@@ -1,22 +1,46 @@
 from services.ipValidator import get_public_ip
-import os
+from services.downloadPFX import download_pfx
 from dotenv import load_dotenv
+import os
 
-# Verificação de local empresa.
-
-    # Carrega as variáveis do .env
+#Carregando os dados referente ao IP FIXO DESEJADO
 load_dotenv()
-    # Dados sendo puxado da .env IP FIXO
 FIXED_IP = os.getenv("FIXED_IP")
 
+#Validando se o colaborador está na empresa
 if FIXED_IP == get_public_ip():
-    print("Você está na office")
 
+    url = 'https://drive.google.com/file/d/1YuZ75VGemjs0diG2EH4dk_FO_0XJwFs_/view?usp=sharing'
+    download_pfx(url)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
 
 else:
-    print("Você não está na office!")
+    print("Você não está na sua organização, falar com TI!")
 
 
 
