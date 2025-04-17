@@ -1,4 +1,4 @@
-from utils.ipValidator import get_public_ip
+from services.ipValidator import get_public_ip
 import os
 from dotenv import load_dotenv
 
@@ -12,6 +12,7 @@ FIXED_IP = os.getenv("FIXED_IP")
 if FIXED_IP == get_public_ip():
     print("Você está na office")
 
+    
 
 
 else:
